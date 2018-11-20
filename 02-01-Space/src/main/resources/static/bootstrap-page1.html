@@ -2,42 +2,265 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
-  <title>Bootstrap</title>
+<link href="https://fonts.googleapis.com/css?family=Spectral+SC|Strait" rel="stylesheet">
+<script src="https://js-agent.newrelic.com/nr-1099.min.js"></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+  
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  </style>
+  <title>Homepage</title>
 </head>
 <body>
-	<div class="container">
-		
-		<div class="row">
-			<img src="https://via.placeholder.com/1200x450/ff0000/ffffff?text=Banner+Image" class="img-fluid"></div>
-		
-		<section class="row">
-		<article class="col-lg-6 col-md-6 col-sm-12"><img src="https://via.placeholder.com/600x400/ffff00/000000?text=Article+Image" class="img-fluid"><h1>Heading</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu consectetur libero. Vivamus luctus mi vel tristique laoreet. Ut et dolor augue. Ut metus nulla, varius nec massa at, eleifend finibus quam. Cras blandit luctus congue. In fringilla ex nibh, sed mattis dolor finibus nec. Mauris egestas justo id ipsum convallis, eu iaculis lectus aliquam. Proin quis placerat turpis. Duis consequat leo ac velit iaculis suscipit. Nullam odio ipsum, blandit feugiat molestie ut, luctus non nisl. Aenean faucibus, purus sed vulputate blandit, metus arcu pulvinar orci, vel commodo quam justo in augue. Nulla mollis massa at nisi facilisis, a porttitor massa cursus.</p></article>
-			
-		<article class="col-lg-6 col-md-6 col-sm-12"><img src="https://via.placeholder.com/600x600/ffff00/000000?text=Article+Image" class="img-fluid"><h1>Heading</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu consectetur libero. Vivamus luctus mi vel tristique laoreet. Ut et dolor augue. Ut metus nulla, varius nec massa at, eleifend finibus quam. Cras blandit luctus congue. In fringilla ex nibh, sed mattis dolor finibus nec. Mauris egestas justo id ipsum convallis, eu iaculis lectus aliquam. Proin quis placerat turpis. Duis consequat leo ac velit iaculis suscipit. Nullam odio ipsum, blandit feugiat molestie ut, luctus non nisl. Aenean faucibus, purus sed vulputate blandit, metus arcu pulvinar orci, vel commodo quam justo in augue. Nulla mollis massa at nisi facilisis, a porttitor massa cursus.</p></article>
-		
-		</section>
-		
-		<section class="row">
-		<article class="col-lg-4 col-md-12 col-sm-12"><img src="https://via.placeholder.com/600x400/0000ff/000000?text=Article+Image" class="img-fluid"><h2>Heading</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu consectetur libero. Vivamus luctus mi vel tristique laoreet. Ut et dolor augue.</p></article><br>
 
-		<article class="col-lg-4 col-md-12 col-sm-12"><img src="https://via.placeholder.com/600x400/0000ff/000000?text=Article+Image" class="img-fluid"><h2>Heading</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu consectetur libero. Vivamus luctus mi vel tristique laoreet. Ut et dolor augue.</p></article>
-			
-		<article class="col-lg-4 col-md-12 col-sm-12"><img src="https://via.placeholder.com/600x400/0000ff/000000?text=Article+Image" class="img-fluid"><h2>Heading</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu consectetur libero. Vivamus luctus mi vel tristique laoreet. Ut et dolor augue.</p></article>
+<div class="container">
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/ACbanner1.jpg" alt="Image1" width="1100" height="500">
+		<div class="carousel-caption">
+    <h3>Stay at BluStay</h3>
+    <p>Visit the slick apartments and space that we have to offer!</p>
+		</div>
+		</div>
+    <div class="carousel-item">
+      <img src="images/ACbanner2.jpg" alt="Image2" width="1100" height="500">
+		<div class="carousel-caption">
+    <h3>Suitable for all situations</h3>
+    <p> Perfect for corporate stays, couples, small groups and families!</p>
+    </div>
+	  </div>
+    <div class="carousel-item">
+      <img src="images/ACbanner3.jpg" alt="Image3" width="1100" height="500">
+		<div class="carousel-caption">
+    <h3>Enjoy the Belfast Experience</h3>
+    <p>Provides the opportunity to see all of Belfast's tourist sites!</p>
+    </div>
+	  </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+	<a class="navbar-brand" href="#">
+    <img src="Images/ACLogo.jpg" class="rounded-circle" alt="Logo" style="width:40px;">
+  </a>
+	<button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+	<span class="navbar-toggler-icon"></span> 
+	</button>
+	<div class="collapse navbar-collapse" id="collapse_target">
 		
-		</section>
+<ul class="navbar-nav">
+
+<li class="nav-item">
+<a class="nav-link" href="index.html">Home</a>
+</li>
+					
+					
+<li class="nav-item">
+<a class="nav-link" href="bootstrap-page1.html">Tourism</a>
+</li>
+
+					
+<li class="nav-item">
+<a class="nav-link" href="contact.html">Contact</a>
+</li>
+</ul>
+		</div>
+</nav>
+
+
+<section class="row">
+<article class="col-lg-12 col-md-12 col-sm-12">
+<h1>Must do's in the city of Belfast!</h1>
+<h2>Belfast's tourist sites.</h2>	
+	</article>	
+	</section>
+	
+	
+	<section class="row">
+
+	<article	 class="col-lg-12 col-md-12">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="images/Titanic1.jpg" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+    <h5>Titanic Museum</h5>
+    <p>Visit the Museum dedicated to the most infamous ship in history!</p>
+    </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="images/Crumlin2.jpg" alt="Second slide">
+      <div class="carousel-caption d-none d-md-block">
+    <h5>Crumlin Prison</h5>
+    <p>Take a tour in Crumlin Prison, one of Belfast's most notorious locations!</p>
+    </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="images/BlackTaxiTour1.jpg" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+    <h5>Black Taxi Tour</h5>
+    <p>Ride and see Belfast within the iconic Black Taxi service!</p>
+    </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="images/GMImage1.jpg" alt="Fourth slide">
+            <div class="carousel-caption d-none d-md-block">
+    <h5>St. George's Market</h5>
+    <p>Shop in the one of Belfast's iconic markets!</p>
+    </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="images/CQImage2.jpg" alt="Fifth slide">
+            <div class="carousel-caption d-none d-md-block">
+    <h5>Cathedral Quarter</h5>
+    <p>Take a look at the restaurants and pubs of Cathedral Quarter!</p>
+    </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+</article>
+</section>
+
+<section class="row">
+<article class="col-lg-12 col-md-12 col-sm-12">
+<p></p>
+<h2>Belfast's walks</h2>	
+	</article>	
+	</section>
+	
+	
+	<section class="row">
+
+	<article	 class="col-lg-12 col-md-12">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="images/Titanic1.jpg" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+    <h5>Titanic Museum</h5>
+    <p>Visit the Museum dedicated to the most infamous ship in history!</p>
+    </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="images/Crumlin2.jpg" alt="Second slide">
+      <div class="carousel-caption d-none d-md-block">
+    <h5>Crumlin Prison</h5>
+    <p>Take a tour in Crumlin Prison, one of Belfast's most notorious locations!</p>
+    </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="images/BlackTaxiTour1.jpg" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+    <h5>Black Taxi Tour</h5>
+    <p>Ride and see Belfast within the iconic Black Taxi service!</p>
+    </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="images/GMImage1.jpg" alt="Fourth slide">
+            <div class="carousel-caption d-none d-md-block">
+    <h5>St. George's Market</h5>
+    <p>Shop in the one of Belfast's iconic markets!</p>
+    </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+</article>
+</section>
 		
-		<footer><row><col-12><img src="https://via.placeholder.com/1200x150/7B241C/000000?text=Footer" class="img-fluid"></col-12></row>
-			
-		</footer>
+<footer class="page-footer font-small teal pt-4">
+
+    <div class="container-fluid text-center text-md-left">
+
+      <div class="row">
+
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <h5 class="text-uppercase font-weight-bold">Contact Us</h5>
+          <p>Tel:0371 664 1000 </p>
+
+        </div>
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <div class="col-md-6 mb-md-0 mb-3">
+
+          <h5 class="text-uppercase font-weight-bold">Find Us</h5>
+          <p>Address: 3rd Floor Ranger House </br>
+<p>Walnut Tree Close </br>
+<p>Guildford GU1 4UL </br>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+      <a href="https://mdbootstrap.com/bootstrap-tutorial/"> Ubisoft</a>
+    </div>
+
+  </footer>
+
+</div>
 
 
-
-</div><!-- container -->
 
 <script src="js/jquery.slim.min.js"></script>
 <script src="js/popper.min.js"></script>

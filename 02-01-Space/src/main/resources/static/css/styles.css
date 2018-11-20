@@ -1,18 +1,106 @@
 @charset "utf-8";
 /* CSS Document */
+.container {background-color:gainsboro}
+h1 {color:maroon; font-weight:800;font-family: 'Strait', sans-serif;
+}
+body {font-family: 'Strait', sans-serif; background-image:url(Body.jpg); background-attachment: fixed;}
 
-h1 {color:maroon; font-weight:800;font-family: 'Montserrat', sans-serif;}
-body {font-family: 'Ubuntu', sans-serif;}
+.iframe-container{
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
+}
+.iframe-container > *{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
 
-.btn-outline-warning {
-    color: #ffc107;
-    background-color: blue;
-    background-image: none;
-    border-color: #ffc107;
-	
-.btn-danger {
-    color: #33c33;
-    background-color: #33c33;
-    border-color: white;
+/* Makes images fully responsive */
+
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ------------------- Carousel Styling ------------------- */
+
+.carousel-inner {
+  border-radius: 15px;
+}
+
+.carousel-caption {
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  padding: 0 0 10px 25px;
+  color: #fff;
+  text-align: left;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 15;
+  margin: 0;
+  padding: 0 25px 25px 0;
+  text-align: right;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+}
 
 
+/* ------------------- Section Styling - Not needed for carousel styling ------------------- */
+
+.section-white {
+   padding: 10px 0;
+}
+
+.section-white {
+  background-color: #fff;
+  color: #555;
+}
+
+@media screen and (min-width: 768px) {
+
+  .section-white {
+     padding: 1.5em 0;
+  }
+
+}
+
+@media screen and (min-width: 992px) {
+
+  .container {
+    max-width: 930px;
+  }
+
+}
+
+.panel-footer{
+  background-color:#337ab7;
+  border-color: #337ab7;
+  color: #FFFFFF;
+
+ }
