@@ -5,9 +5,15 @@ public class Dwarf {
 	private String author;
 	private String image;
 	
-	public Dwarf()
-	{
+	public Dwarf(){
 		super();
+	}
+	
+	public Dwarf(String name, String author, String image) {
+		super();
+		this.name = name;
+		this.author = author;
+		this.image = image;
 	}
 	public String getName() {
 		return name;
