@@ -10,7 +10,7 @@ public class TourismService {
 	
 	public ArrayList<Tourism> get SiteTourism() {
 		
-		ArrayList<Tourism> tours = new ArrayList
+		ArrayList<Tourism> tours = new ArrayList<Tourism>();
 	}
 
 }
