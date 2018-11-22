@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
   <meta charset="UTF-8">
@@ -9,24 +9,37 @@
 <link href="https://fonts.googleapis.com/css?family=Spectral+SC|Strait" rel="stylesheet">
 <script src="https://js-agent.newrelic.com/nr-1099.min.js"></script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
-
   
-  <title>Tourist Home</title> 
+  <title th:text="${pageTitle}">Tourist Home</title> 
 </head>
-
 <body>
 <nav th:replace="layouts/nav :: navFragment">
 </nav>
 
 <div class="jumbotron text-centre">
 
-<h1>Tourist Home Page</h1>
+<h1>Tourist Sites</h1>
+<p>Tour the most iconic in the city of Belfast</p>
 
 </div>
 
 <div class="container">
-<p>Belfast Sites</p>
-<p>Belfast Walks</p>
+<p>Tourist Walks</p>
+
+	<table class="table table-striped">
+	<thead>
+		<th>Image</th>
+		<th>Name</th>
+		<th>Map</th>
+	</thead>
+	<tbody>
+		<tr th:each="dwarf: ${disneyDwarfs}">
+			<td><img src="../static/images/cavehillImage1.jpg" th:src="@{/images/}+${tourist.image}"></img></td>
+			<td th:text="${tourist.name}">Cave Hill</td>
+			<td th:text="${tourist.map}">Map</td>
+		</tr>
+	</tbody>
+	</table>
 </div>
 
 <script src="js/jquery.slim.min.js"></script>

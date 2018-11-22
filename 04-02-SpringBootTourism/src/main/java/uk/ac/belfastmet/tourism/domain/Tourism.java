@@ -4,18 +4,16 @@ public class Tourism {
 	
 	private String image;
 	private String name;
-	private String address;
 	private String map;
 	
 	public Tourism() {
 		super();
 	}
 
-	public Tourism(String image, String name, String address, String map) {
+	public Tourism(String image, String name, String map) {
 		super();
 		this.image = image;
 		this.name = name;
-		this.address = address;
 		this.map = map;
 	}
 
@@ -33,14 +31,6 @@ public class Tourism {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
 	}
 
 	public String getMap() {
