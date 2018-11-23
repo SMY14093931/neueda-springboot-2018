@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Spectral+SC|Strait" rel="stylesheet">
+<script src="https://js-agent.newrelic.com/nr-1099.min.js"></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+  
+  <title th:text="${pageTitle}">Building Home</title> 
+</head>
+<body>
+<nav th:replace="layouts/nav :: navFragment">
+</nav>
+
+<div class="jumbotron text-centre">
+
+<h1>Building by Volume</h1>
+<p>See the biggest buildings grouped by volume!</p>
+
+</div>
+
+<div class="container">
+<p>Tourist Sites</p>
+
+	<table class="table table-striped">
+	<thead>
+		<th>Name</th>
+		<th>Country</th>
+		<th>Place</th>
+		<th>Footprint</th>
+		<th>Length x Width</th>
+		<th>Description</th>
+		<th>Image</th>
+		<th>Map</th>
+	</thead>
+	<tbody>
+		<tr th:each="building: ${fpService}">
+			<td th:text="${building.name}">Boeing Everett Factory</td>
+			<td th:text="${building.country}">United States</td>
+			<td th:text="${building.place}">Everett, Washington</td>
+			<td><img src="../static/images/BEF.jpg" th:src="@{/images/}+${building.image}" width=300 height=225></img></td>
+			<td th:utext="${building.map}">
+			</td>
+			<td th:text="${building.footprint}">398000 m2</td>
+			<td th:text="${building.lengthxwidth}">13300000 m3</td>
+			<td th:text="${building.description}">Description</td>
+		</tr>
+	</tbody>
+	</table>
+</div>
+
+<script src="js/jquery.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
