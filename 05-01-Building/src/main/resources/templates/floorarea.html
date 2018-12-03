@@ -18,8 +18,8 @@
 
 <div class="jumbotron text-centre">
 
-<h1>Building by Footprint</h1>
-<p>See the biggest buildings grouped by footprint!</p>
+<h1>Building by floor area</h1>
+<p>See the biggest buildings grouped by floor area!</p>
 
 </div>
 
@@ -36,15 +36,14 @@
 		<th>Map</th>
 	</thead>
 	<tbody>
-		<tr th:each="building: ${fpService}">
+		<tr th:each="building: ${faService}">
 			<td th:text="${building.name}">Aalsmeer Flower Auction Building</td>
 			<td th:text="${building.country}">Netherlands</td>
 			<td th:text="${building.place}">Aalsmeer</td>
-			<td th:text="${building.footprint}">518,000 m2</td>
+			<td th:text="${building.floorarea}">518,000 m2</td>
 			<td><img src="../static/images/BEF.jpg" th:src="@{/images/}+${building.image}" width=300 height=225></img></td>
 			<td th:utext="${building.map}">
 			</td>
-			
 		</tr>
 	</tbody>
 	</table>

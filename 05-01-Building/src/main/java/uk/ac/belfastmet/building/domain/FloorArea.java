@@ -8,7 +8,7 @@ public class FloorArea extends Building {
 		super();
 	}
 
-	public FloorArea(String name, String country, String place, String image, String map, String floorarea) {
+	public FloorArea(String name, String country, String place, String floorarea, String image, String map) {
 		super(name, country, place, image, map);
 		// TODO Auto-generated constructor stub
 		this.floorarea = floorarea;

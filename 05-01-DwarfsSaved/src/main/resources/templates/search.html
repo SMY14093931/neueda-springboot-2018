@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Spectral+SC|Strait" rel="stylesheet">
+<script src="https://js-agent.newrelic.com/nr-1099.min.js"></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
+  
+  <title>Dwarf Home</title> 
+</head>
+
+<body>
+<nav th:replace="layouts/nav :: navFragment">
+</nav>
+
+<div class="jumbotron text-centre">
+
+<h1>Dwarf Search Page</h1>
+
+</div>
+
+<div class="container">
+<form action="/action_page.php">
+  First name:<br>
+  <input type="text" name="firstname" value="Mickey"><br>
+  Last name:<br>
+  <input type="text" name="lastname" value="Mouse"><br><br>
+  <input type="submit" value="Submit">
+</form>
+</div>
+</body>
+</html>
