@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
   <meta charset="UTF-8">
@@ -9,45 +9,24 @@
 <link href="https://fonts.googleapis.com/css?family=Spectral+SC|Strait" rel="stylesheet">
 <script src="https://js-agent.newrelic.com/nr-1099.min.js"></script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
+
   
-  <title th:text="${pageTitle}">Building Home</title> 
+  <title>Dwarf Home</title> 
 </head>
+
 <body>
 <nav th:replace="layouts/nav :: navFragment">
 </nav>
 
 <div class="jumbotron text-centre">
 
-<h1>Building by Footprint</h1>
-<p>See the biggest buildings grouped by footprint!</p>
+<h1>Dwarf Home Page</h1>
 
 </div>
 
 <div class="container">
-<p>Tourist Sites</p>
-
-	<table class="table table-striped">
-	<thead>
-		<th>Name</th>
-		<th>Country</th>
-		<th>Place</th>
-		<th>Floor Area</th>
-		<th>Image</th>
-		<th>Map</th>
-	</thead>
-	<tbody>
-		<tr th:each="building: ${fpService}">
-			<td th:text="${building.name}">Aalsmeer Flower Auction Building</td>
-			<td th:text="${building.country}">Netherlands</td>
-			<td th:text="${building.place}">Aalsmeer</td>
-			<td th:text="${building.footprint}">518,000 m2</td>
-			<td><img src="../static/images/BEF.jpg" th:src="@{/images/}+${building.image}" width=300 height=225></img></td>
-			<td th:utext="${building.map}">
-			</td>
-			
-		</tr>
-	</tbody>
-	</table>
+<p>Disney Dwarfs</p>
+<p>Tolkien Dwarves</p>
 </div>
 
 <script src="js/jquery.slim.min.js"></script>

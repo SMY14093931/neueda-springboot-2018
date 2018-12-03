@@ -18,7 +18,7 @@ public class FloorAreaController {
 	public String root(Model model) {
 		
 		FloorAreaService faService = new FloorAreaService();
-		ArrayList<FloorArea> fabuilding = faService.getFABuilding();
+		ArrayList<FloorArea> fabuilding = faService.getBuildingFloorArea();
 		
 		model.addAttribute("pageTitle", "Floor Area");
 		model.addAttribute("fabuilding", fabuilding);

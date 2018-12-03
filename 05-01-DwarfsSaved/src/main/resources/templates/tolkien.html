@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,7 +10,15 @@
 <script src="https://js-agent.newrelic.com/nr-1099.min.js"></script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
   
-  <title th:text="${pageTitle}">Building Home</title> 
+    <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  </style>
+  
+  <title>Dwarf Home</title> 
 </head>
 <body>
 <nav th:replace="layouts/nav :: navFragment">
@@ -18,37 +26,24 @@
 
 <div class="jumbotron text-centre">
 
-<h1>Building by Footprint</h1>
-<p>See the biggest buildings grouped by footprint!</p>
+<h1>Dwarf Home Page</h1>
 
 </div>
 
 <div class="container">
-<p>Tourist Sites</p>
+<p>Tolkien Dwarfs</p>
 
 	<table class="table table-striped">
 	<thead>
 		<th>Name</th>
-		<th>Country</th>
-		<th>Place</th>
-		<th>Footprint</th>
-		<th>Length x Width</th>
-		<th>Description</th>
+		<th>Author</th>
 		<th>Image</th>
-		<th>Map</th>
 	</thead>
 	<tbody>
-		<tr th:each="building: ${fpService}">
-			<td th:text="${building.name}">Aalsmeer Flower Auction Building</td>
-			<td th:text="${building.country}">Netherlands</td>
-			<td th:text="${building.place}">Aalsmeer</td>
-			<td><img src="../static/images/BEF.jpg" th:src="@{/images/}+${building.image}" width=300 height=225></img></td>
-			<td th:utext="${building.map}">
-			</td>
-			<td th:text="${building.footprint}">518,000 m2</td>
-			<td th:text="${building.lengthxwidth}">740 m x 700 m</td>
-			<td th:text="${building.description}">Description</td>
-			
+		<tr th:each="dwarf: ${tolkienDwarfs}">
+			<td th:text="${dwarf.name}">Thorin</td>
+			<td th:text="${dwarf.author}">Tolkien</td>
+			<td><img src="../static/images/Thorin.png" th:src="@{/images/}+${dwarf.image}"></img></td>
 		</tr>
 	</tbody>
 	</table>

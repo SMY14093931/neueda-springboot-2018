@@ -10,7 +10,7 @@
 <script src="https://js-agent.newrelic.com/nr-1099.min.js"></script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
   
-  <title th:text="${pageTitle}">Building Home</title> 
+  <title th:text="${pageTitle}">Dwarf Home</title> 
 </head>
 <body>
 <nav th:replace="layouts/nav :: navFragment">
@@ -18,37 +18,25 @@
 
 <div class="jumbotron text-centre">
 
-<h1>Building by Footprint</h1>
-<p>See the biggest buildings grouped by footprint!</p>
+<h1>Disney Dwarfs</h1>
+<p>Meets the 7 dwarfs that followed Snow White</p>
 
 </div>
 
 <div class="container">
-<p>Tourist Sites</p>
+<p>Disney Dwarfs</p>
 
 	<table class="table table-striped">
 	<thead>
 		<th>Name</th>
-		<th>Country</th>
-		<th>Place</th>
-		<th>Footprint</th>
-		<th>Length x Width</th>
-		<th>Description</th>
+		<th>Author</th>
 		<th>Image</th>
-		<th>Map</th>
 	</thead>
 	<tbody>
-		<tr th:each="building: ${fpService}">
-			<td th:text="${building.name}">Aalsmeer Flower Auction Building</td>
-			<td th:text="${building.country}">Netherlands</td>
-			<td th:text="${building.place}">Aalsmeer</td>
-			<td><img src="../static/images/BEF.jpg" th:src="@{/images/}+${building.image}" width=300 height=225></img></td>
-			<td th:utext="${building.map}">
-			</td>
-			<td th:text="${building.footprint}">518,000 m2</td>
-			<td th:text="${building.lengthxwidth}">740 m x 700 m</td>
-			<td th:text="${building.description}">Description</td>
-			
+		<tr th:each="dwarf: ${disneyDwarfs}">
+			<td th:text="${dwarf.name}">Happy</td>
+			<td th:text="${dwarf.author}">Disney</td>
+			<td><img src="../static/images/Happy.png" th:src="@{/images/}+${dwarf.image}"></img></td>
 		</tr>
 	</tbody>
 	</table>
