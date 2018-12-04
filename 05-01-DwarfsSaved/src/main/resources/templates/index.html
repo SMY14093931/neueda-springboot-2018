@@ -20,13 +20,44 @@
 
 <div class="jumbotron text-centre">
 
-<h1>Dwarf Home Page</h1>
+<h1>Dwarfs</h1>
+<h2></h2>
+<br />
 
 </div>
+
 
 <div class="container">
 <p>Disney Dwarfs</p>
 <p>Tolkien Dwarves</p>
+
+
+<form action="/searchid" method="get">
+	<label>ID</label>
+	<input  type="text" name="id" placeholder="Enter ID"></input>
+	<input type="submit" value="Search"></input>
+</form>
+
+<form action="/searchname" method="post">
+	<label>Name</label>
+	<input  type="text" name="name" placeholder="Enter name"></input>
+	<input type="submit" value="Search"></input>
+</form>
+
+<form action="/searchauthor" method="get">
+	<label>Author</label>
+	<input type="text" name="author" placeholder="Enter author"></input>
+	<input type="submit" value="Search"></input>
+</form>
+
+<form action="/searchnameauthor" method="get">
+	<label>Name</label>
+	<input type="text" name="name" placeholder="Enter name"></input>
+	<label>Author</label>
+	<input type="text" name="author" placeholder="Enter author"></input>
+	<input type="submit" value="Search"></input>
+</form>
+
 </div>
 </body>
 </html>
