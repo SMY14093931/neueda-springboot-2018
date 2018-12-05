@@ -8,9 +8,11 @@ public interface PassengerRepository extends CrudRepository<Passenger, Integer>{
 	
 	Passenger findByPassengerId(Integer passengerId);
 
-	Passenger findByName(String name);
+	Iterable<Passenger> findByNameContaining(String name);
 	
 	Iterable<Passenger> findBySex(String sex);
+	
+	Iterable<Passenger> findByNameContainingAndSex(String name, String sex);
 
 
 }

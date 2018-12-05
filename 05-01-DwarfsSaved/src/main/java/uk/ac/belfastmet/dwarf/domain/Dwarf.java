@@ -28,12 +28,12 @@ public class Dwarf {
 
 
 
-	public Integer getDwarfID() {
+	public Integer getDwarfId() {
 		return dwarfId;
 	}
 
-	public void setDwarfID(Integer dwarfID) {
-		this.dwarfId = dwarfID;
+	public void setDwarfId(Integer dwarfId) {
+		this.dwarfId = dwarfId;
 	}
 
 	public String getName() {

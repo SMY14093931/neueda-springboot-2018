@@ -16,14 +16,45 @@
 <nav th:replace="layouts/nav :: navFragment">
 </nav>
 
-<div class="jumbotron text-centre">
 
-<h1 th:text="${pageTitle}"></h1>
-
+<div class="jumbotron" style="background-image:../static/css/background.jpg; background-size: 100%;">
+   <div class="container for-about">
+   <h1 class="display-4" th:text="Titanic + ' ' + ${pageTitle}"></h1>
+   <p class="lead">This website is dedicated to the information of the passengers of the Titanic.</p>
+   </div>
 </div>
 
 <div class="container">
-<p th:text="${pageTitle}"></p>
+
+<form action="/searchid" method="get">
+	<label>ID</label>
+	<input  type="text" name="id" placeholder="Enter id"></input>
+	<input type="submit" class="btn btn-primary mb-2" value="Search"></input>
+</form>
+<p></p>
+
+<form action="/searchname" method="post">
+	<label>Name</label>
+	<input  type="text" name="name" placeholder="Enter name"></input>
+	<input type="submit" class="btn btn-primary mb-2" value="Search"></input>
+</form>
+<p></p>
+
+<form action="/searchsex" method="get">
+	<label>Sex</label>
+	<input  type="text" name="sex" placeholder="Enter gender"></input>
+	<input type="submit" class="btn btn-primary mb-2" value="Search"></input>
+</form>
+<p></p>
+
+<form action="/searchnamesex" method="get">
+	<label>Name</label>
+	<input type="text" name="name" placeholder="Enter name"></input>
+	<label>Gender</label>
+	<input type="text" name="sex" placeholder="Enter gender"></input>
+	<input type="submit" value="Search"></input>
+</form>
+
 
 	<table class="table table-striped">
 	<thead>
@@ -39,6 +70,7 @@
 		<th>Fare</th>
 		<th>Cabin</th>
 		<th>Embarked</th>
+		<th>CRUD</th>
 	</thead>
 	<tbody>
 		<tr th:each="passenger: ${passengers}">
@@ -54,6 +86,9 @@
 			<td th:text="${passenger.fare}"></td>
 			<td th:text="${passenger.cabin}"></td>
 			<td th:text="${passenger.embarked}"></td>
+			<td><a href="#" th:href="@{/view/} + ${passenger.passengerId}">View</a>
+			<a href="#" th:href="@{/delete/} + ${passenger.passengerId}">Delete</a>
+			</td>
 		</tr>
 	</tbody>
 	</table>

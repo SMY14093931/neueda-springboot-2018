@@ -22,7 +22,7 @@ public class SearchController {
 
 	@GetMapping("/searchid")
 	public String searchId(@RequestParam("id") Integer dwarfId, Model model) {
-		model.addAttribute("pageTitle", "Search!");
+		model.addAttribute("pageTitle", "ID");
 		model.addAttribute("dwarfs", this.dwarfRepository.findByDwarfId(dwarfId));
 	
 		return "dwarfPage";
@@ -30,7 +30,7 @@ public class SearchController {
 	
 	@PostMapping("/searchname")
 	public String searchName(@RequestParam("name") String name, Model model) {
-		model.addAttribute("pageTitle", "Search!");
+		model.addAttribute("pageTitle", "Names!");
 		model.addAttribute("dwarfs", this.dwarfRepository.findByName(name));
 	
 		return "dwarfPage";

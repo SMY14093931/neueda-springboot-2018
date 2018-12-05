@@ -16,26 +16,32 @@
 <nav th:replace="layouts/nav :: navFragment">
 </nav>
 
-<div class="jumbotron text-centre">
-
-<h1 th:text="${pageTitle} + ' ' + Dwarfs">Disney Dwarfs</h1>
-
+<div class="jumbotron" style="background-image: url(http://www.californiafootgolfclub.com/static/img/footgolf-1.jpg); background-size: 100%;">
+   <div class="container for-about">
+	<h1 class="display-4" th:text="${pageTitle} + ' ' + Dwarfs">Disney Dwarfs</h1>
+   <p class="lead">This website is dedicated to the information of the passengers of the Titanic.</p>
+   </div>
 </div>
 
 <div class="container">
 <p th:text="${pageTitle} + ' ' + Dwarfs">Disney Dwarfs</p>
 
+<div class="alert alert-success" role="alert" th:if="${message}">
+		<p th:text="${message}"></p>
+</div>
+
 	<table class="table table-striped">
 	<thead>
 		<th>Name</th>
-		<th>Author</th>
 		<th>Image</th>
+		<th>CRUD</th>
 	</thead>
 	<tbody>
 		<tr th:each="dwarf: ${dwarfs}">
 			<td th:text="${dwarf.name}">Happy</td>
-			<td th:text="${dwarf.author}">Disney</td>
 			<td><img src="../static/images/Happy.png" th:src="@{/images/}+${dwarf.image}"></img></td>
+			<td><a href="#" th:href="@{/view/} + ${dwarf.dwarfId}">View</a><p></p>
+			<a href="#" th:href="@{/delete/} + ${dwarf.dwarfId}">Delete</a></td>
 		</tr>
 	</tbody>
 	</table>

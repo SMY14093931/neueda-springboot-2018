@@ -20,38 +20,43 @@ public class PassengerController {
 		this.passengerRepository = passengerRepository;
 	}
 	
-	@GetMapping("/all")
+
+	@GetMapping("/passenger")
 	public String root(Model model) {
 		
-		model.addAttribute("pageTitle", "Passenger");
+		model.addAttribute("pageTitle", "Passengers");
 		model.addAttribute("passengers", this.passengerRepository.findAll());	
 //		model.addAttribute("passengers",this.passengerRepository.findByPassengerId(1));	
 		return "passengersPage";
 		
 	}
 	
-	
 	@GetMapping("/searchid")
 	public String searchId(@RequestParam("id") Integer passengerId, Model model) {
-		model.addAttribute("pageTitle", "Search!");
+		model.addAttribute("pageTitle", "Passenger ID");
 		model.addAttribute("passengers", this.passengerRepository.findByPassengerId(passengerId));
 		return "passengersPage";
 	}
 	
 	@PostMapping("/searchname")
 	public String searchName(@RequestParam("name") String name, Model model) {
-		model.addAttribute("pageTitle", "Search!");
-		model.addAttribute("passengers", this.passengerRepository.findByName(name));
+		model.addAttribute("pageTitle", "Passengers by Name");
+		model.addAttribute("passengers", this.passengerRepository.findByNameContaining(name));
 		return "passengersPage";
 	}
 
 	@GetMapping("/searchsex")
 	public String searchSex(@RequestParam("sex") String sex, Model model) {
-		model.addAttribute("pageTitle", "Search!");
+		model.addAttribute("pageTitle", "Passengers by Gender");
 		model.addAttribute("passengers", this.passengerRepository.findBySex(sex));
 		return "passengersPage";
 	}
 	
-	
+	@GetMapping("/searchnamesex")
+	public String searchNameAuthor(@RequestParam("name") String name, @RequestParam("sex") String sex, Model model) {
+		model.addAttribute("pageTitle", "Passengers");
+		model.addAttribute("passengers", this.passengerRepository.findByNameContainingAndSex(name, sex));
+		return "passengersPage";
 	}
+}
 
