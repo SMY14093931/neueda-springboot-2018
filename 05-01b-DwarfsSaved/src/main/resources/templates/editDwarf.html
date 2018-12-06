@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Spectral+SC|Strait" rel="stylesheet">
+<script src="https://js-agent.newrelic.com/nr-1099.min.js"></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+  
+  <title th:text="${pageTitle}">Dwarf Home</title> 
+</head>
+<body>
+<nav th:replace="layouts/nav :: navFragment">
+</nav>
+
+<div class="jumbotron" style="background-image: url(http://www.californiafootgolfclub.com/static/img/footgolf-1.jpg); background-size: 100%;">
+   <div class="container for-about">
+	<h1 class="display-4" th:text="${pageTitle} + ' ' + Dwarfs">Disney Dwarfs</h1>
+   <p class="lead">This website is dedicated to the information on the dwarfs of Disney and Tolkien.</p>
+   </div>
+</div>
+
+<div class="container">
+<p th:text="${pageTitle} + ' ' + Dwarfs">Disney Dwarfs</p>
+
+	<form class="form-horizontal" th:action="@{/save}" method="post">
+	
+	<table class="table table-striped">
+	<thead>
+		<th>Property</th>
+		<th>Value</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Dwarf Id</td>
+			<td><input type="text" readonly="readonly" th:field="${dwarf.dwarfId}"></input></td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td><input type="text" class="form-control" th:field="${dwarf.name}"></input>
+				<span th:if="${#fields.hasErrors('dwarf.name')}" th:errors="${dwarf.name}"
+				th:class="help-block">Name cannot be empty</span>
+			</td>
+		</tr>
+		<tr>
+			<td>Author</td>
+			<td><input type="text" class="form-control" th:field="${dwarf.author}"></input>
+				<span th:if="${#fields.hasErrors('dwarf.author')}" th:errors="${dwarf.author}"
+				th:class="help-block">Author cannot be empty</span>
+			</td>
+		</tr>
+		<tr>
+			<td>Image</td>
+			<td><input type="text" class="form-control" th:field="${dwarf.image}"></input>
+				<span th:if="${#fields.hasErrors('dwarf.image')}" th:errors="${dwarf.image}"
+				th:class="help-block">Image cannot be empty</span>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+	<button type="submit" class="btn btn-primary">Save</button>
+	</form>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+</body>
+</html>

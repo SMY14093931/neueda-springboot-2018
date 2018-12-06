@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Spectral+SC|Strait" rel="stylesheet">
+<script src="https://js-agent.newrelic.com/nr-1099.min.js"></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+  
+  <title th:text="${pageTitle}">Dwarf Home</title> 
+</head>
+<body>
+<nav th:replace="layouts/nav :: navFragment">
+</nav>
+
+<div class="jumbotron" style="background-image: url(http://www.californiafootgolfclub.com/static/img/footgolf-1.jpg); background-size: 100%;">
+   <div class="container for-about">
+	<h1 class="display-4" th:text="${pageTitle} + ' ' + Dwarfs">Disney Dwarfs</h1>
+   <p class="lead">This website is dedicated to the information of the passengers of the Titanic.</p>
+   </div>
+</div>
+
+<div class="container">
+<p th:text="${pageTitle} + ' ' + Dwarfs">Disney Dwarfs</p>
+
+<div class="alert alert-success" role="alert" th:if="${message}">
+		<p th:text="${message}"></p>
+</div>
+
+<p><a href="#" th:href="@{/add/}">Add new Dwarf</a><br/></p>
+
+	<table class="table table-striped">
+	<thead>
+		<th>Name</th>
+		<th>Image</th>
+		<th>CRUD</th>
+	</thead>
+	<tbody>
+		<tr th:each="dwarf: ${dwarfs}">
+			<td th:text="${dwarf.name}">Happy</td>
+			<td><img src="../static/images/Happy.png" th:src="@{/images/}+${dwarf.image}"></img></td>
+			<td><a href="#" th:href="@{/view/} + ${dwarf.dwarfId}">View</a><p></p>
+			<a href="#" th:href="@{/delete/} + ${dwarf.dwarfId}">Delete</a><p></p>
+			<a href="#" th:href="@{/edit/} + ${dwarf.dwarfId}">Edit</a></td>
+		</tr>
+	</tbody>
+	</table>
+	<p><a href="#" th:href="@{/add/}">Add new Dwarf</a><br/></p>
+</div>
+
+</body>
+</html>

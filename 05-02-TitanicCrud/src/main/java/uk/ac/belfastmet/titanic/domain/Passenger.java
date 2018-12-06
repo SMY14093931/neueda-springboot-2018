@@ -3,6 +3,7 @@ package uk.ac.belfastmet.titanic.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Passenger {
@@ -10,6 +11,7 @@ public class Passenger {
 	@Id
 	@GeneratedValue
 	private Integer passengerId;
+	@NotEmpty
 	private String survived;
 	private String pclass;
 	private String name;
