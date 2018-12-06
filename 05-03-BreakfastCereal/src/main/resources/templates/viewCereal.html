@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Spectral+SC|Strait" rel="stylesheet">
+<script src="https://js-agent.newrelic.com/nr-1099.min.js"></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+  
+  <title th:text="${pageTitle}">Passengers Page</title> 
+</head>
+<body>
+<nav th:replace="layouts/nav :: navFragment">
+</nav>
+
+
+<div class="jumbotron" style="background-image:../static/css/background.jpg; background-size: 100%;">
+   <div class="container for-about">
+   <h1 class="display-4" th:text="Titanic + ' ' + ${pageTitle}"></h1>
+   <p class="lead">This website is dedicated to the information of the passengers of the Titanic.</p>
+   </div>
+</div>
+
+<div class="container">
+
+<form action="/searchid" method="get">
+	<label>ID</label>
+	<input  type="text" name="id" placeholder="Enter id"></input>
+	<input type="submit" class="btn btn-primary mb-2" value="Search"></input>
+</form>
+<p></p>
+
+<form action="/searchcereal" method="post">
+	<label>Name</label>
+	<input  type="text" name="cereal" placeholder="Enter name"></input>
+	<input type="submit" class="btn btn-primary mb-2" value="Search"></input>
+</form>
+<p></p>
+
+
+	<table class="table table-striped">
+	<thead>
+		<th>Property</th>
+		<th>Value</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Cereal Id</td>
+			<td th:text="${cereal.cerealId}"></td> 
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td th:text="${cereal.cereal}"></td> 
+		</tr>
+		<tr>
+			<td>Manufacturer</td>
+			<td th:text="${cereal.manufacturer}"></td> 
+		</tr>
+		<tr>
+			<td>Energy (kJ)</td>
+			<td th:text="${cereal.energy}"></td> 
+		</tr>
+		<tr>
+			<td>Calories (kcal)</td>
+			<td th:text="${cereal.calories}"></td> 
+		</tr>
+		<tr>
+			<td>Protein (g)</td>
+			<td th:text="${cereal.protein}"></td> 
+		</tr>
+		<tr>
+			<td>Carbohydrate (g)</td>
+			<td th:text="${cereal.carbohydrate}"></td> 
+		</tr>
+		<tr>
+			<td>Sugars (g)</td>
+			<td th:text="${cereal.sugars}"></td> 
+		</tr>
+		<tr>
+			<td>Fat (g)</td>
+			<td th:text="${cereal.fat}"></td> 
+		</tr>
+		<tr>
+			<td>Saturates (g)</td>
+			<td th:text="${cereal.saturates}"></td> 
+		</tr>
+		<tr>
+			<td>Fibre (g)</td>
+			<td th:text="${cereal.fibre}"></td> 
+		</tr>
+		<tr>
+			<td>Sodium (g)</td>
+			<td th:text="${cereal.sodium}"></td> 
+		</tr>
+		<tr>
+			<td>Salt (g)</td>
+			<td th:text="${cereal.salt}"></td> 
+		</tr>
+		<tr>
+			<td>Iron (mg)</td>
+			<td th:text="${cereal.iron}"></td> 
+		</tr>
+	</tbody>
+	</table>
+</div>
+
+</body>
+</html>

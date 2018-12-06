@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Spectral+SC|Strait" rel="stylesheet">
+<script src="https://js-agent.newrelic.com/nr-1099.min.js"></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+  
+  <title th:text="${pageTitle}">Passengers Page</title> 
+</head>
+<body>
+<nav th:replace="layouts/nav :: navFragment">
+</nav>
+
+
+<div class="jumbotron" style="background-image:../static/css/background.jpg; background-size: 100%;">
+   <div class="container for-about">
+   <h1 class="display-4" th:text="Titanic + ' ' + ${pageTitle}"></h1>
+   <p class="lead">This website is dedicated to the information of the passengers of the Titanic.</p>
+   </div>
+</div>
+
+<div class="container">
+
+<form action="/searchid" method="get">
+	<label>ID</label>
+	<input  type="text" name="id" placeholder="Enter id"></input>
+	<input type="submit" class="btn btn-primary mb-2" value="Search"></input>
+</form>
+<p></p>
+
+<form action="/searchcereal" method="post">
+	<label>Name</label>
+	<input  type="text" name="cereal" placeholder="Enter name"></input>
+	<input type="submit" class="btn btn-primary mb-2" value="Search"></input>
+</form>
+<p></p>
+
+<form action="/save" method="post">
+	<table class="table table-striped">
+	<thead>
+		<th>Property</th>
+		<th>Value</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Cereal Id</td>
+			<td><input type="text" readonly="readonly" th:field="${cereal.cerealId}"></input></td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td><input type="text" class="form-control" th:field="${cereal.cereal}"></input>
+			<span th:if="${#fields.hasErrors('cereal.cereal')}" th:errors="${cereal.cereal}"
+				th:class="help-block">Survived cannot be empty</span>
+			</td> 
+		</tr>
+		<tr>
+			<td>Manufacturer</td>
+			<td><input type="text" class="form-control" th:field="${manufacturer}"></input>
+			<span th:if="${#fields.hasErrors('manufacturer')}" th:errors="${manufacturer}"
+				th:class="help-block">Survived cannot be empty</span>
+			</td>
+		</tr>
+		<tr>
+			<td>Energy (kJ)</td>
+			<td><input type="text" class="form-control" th:field="${cereal.energy}"></input>
+			<span th:if="${#fields.hasErrors('cereal.energy')}" th:errors="${cereal.energy}"
+				th:class="help-block">Survived cannot be empty</span>
+			</td> 
+		</tr>
+		<tr>
+			<td>Calories (kcal)</td>
+			<td><input type="text" class="form-control" th:field="${cereal.calories}"></input>
+			<span th:if="${#fields.hasErrors('cereal.calories')}" th:errors="${cereal.calories}"
+				th:class="help-block">Survived cannot be empty</span>
+			</td>
+		</tr>
+		<tr>
+			<td>Protein (g)</td>
+			<td><input type="text" class="form-control" th:field="${cereal.protein}"></input>
+			<span th:if="${#fields.hasErrors('cereal.protein')}" th:errors="${cereal.protein}"
+				th:class="help-block">Survived cannot be empty</span>
+			</td> 
+		</tr>
+		<tr>
+			<td>Carbohydrate (g)</td>
+			<td><input type="text" class="form-control" th:field="${cereal.carbohydrate}"></input>
+			<span th:if="${#fields.hasErrors('passenger.survived')}" th:errors="${passenger.survived}"
+				th:class="help-block">Survived cannot be empty</span>
+			</td> 
+		</tr>
+		<tr>
+			<td>Sugars (g)</td>
+			<td><input type="text" class="form-control" th:field="${cereal.sugars}"></input>
+			<span th:if="${#fields.hasErrors('cereal.sugars')}" th:errors="${cereal.sugars}"
+				th:class="help-block">Survived cannot be empty</span>
+			</td>
+		</tr>
+		<tr>
+			<td>Fat (g)</td>
+			<td><input type="text" class="form-control" th:field="${cereal.fat}"></input>
+			<span th:if="${#fields.hasErrors('cereal.fat')}" th:errors="${cereal.fat}"
+				th:class="help-block">Survived cannot be empty</span>
+			</td> 
+		</tr>
+		<tr>
+			<td>Saturates (g)</td>
+			<td><input type="text" class="form-control" th:field="${cereal.saturates}"></input>
+			<span th:if="${#fields.hasErrors('cereal.saturates')}" th:errors="${cereal.saturates}"
+				th:class="help-block">Survived cannot be empty</span>
+			</td>
+		</tr>
+		<tr>
+			<td>Fibre (g)</td>
+			<td><input type="text" class="form-control" th:field="${cereal.fibre}"></input>
+			<span th:if="${#fields.hasErrors('cereal.fibre')}" th:errors="${cereal.fibre}"
+				th:class="help-block">Survived cannot be empty</span>
+			</td>
+		</tr>
+		<tr>
+			<td>Sodium (g)</td>
+			<td><input type="text" class="form-control" th:field="${cereal.sodium}"></input>
+			<span th:if="${#fields.hasErrors('cereal.sodium')}" th:errors="${cereal.sodium}"
+				th:class="help-block">Survived cannot be empty</span>
+			</td>
+		</tr>
+		<tr>
+			<td>Salt (g)</td>
+			<td><input type="text" class="form-control" th:field="${cereal.salt}">
+			<span th:if="${#fields.hasErrors('cereal.salt')}" th:errors="${cereal.salt}"
+				th:class="help-block">Survived cannot be empty</span>
+			</td> 
+		</tr>
+		<tr>
+			<td>Iron (mg)</td>
+			<td><input type="text" class="form-control" th:field="${cereal.iron}"></input>
+			<span th:if="${#fields.hasErrors('cereal.iron')}" th:errors="${cereal.iron}"
+				th:class="help-block">Survived cannot be empty</span>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+	<button type="submit" class="btn btn-primary">Save</button>
+	</form>
+</div>
+
+</body>
+</html>

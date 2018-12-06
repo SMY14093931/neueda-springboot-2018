@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Spectral+SC|Strait" rel="stylesheet">
+<script src="https://js-agent.newrelic.com/nr-1099.min.js"></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
+  
+  <title>Cereal Home</title> 
+</head>
+
+<body>
+<nav th:replace="layouts/nav :: navFragment">
+</nav>
+
+<div class="jumbotron" style="background-image: url(http://www.californiafootgolfclub.com/static/img/footgolf-1.jpg); background-size: 100%;">
+   <div class="container for-about">
+   <h1 class="display-4">Cereal Home</h1>
+   <p class="lead">This website is dedicated to the Cereals.</p>
+   </div>
+</div>
+
+
+<div class="container">
+<b>Cereal Types</b>
+
+<form action="/searchid" method="get">
+	<label>ID  </label>
+	<input  type="text" name="id" placeholder="Enter id"></input>
+	<input type="submit" class="btn btn-primary mb-2" value="Search"></input>
+</form>
+<p></p>
+
+<form action="/searchcereal" method="post">
+	<label>Name</label>
+	<input  type="text" name="name" placeholder="Enter name"></input>
+	<input type="submit" class="btn btn-primary mb-2" value="Search"></input>
+</form>
+<p></p>
+
+
+<p><a href="#" th:href="@{/add/}">Add new Cereal</a><br/></p>
+
+	<table class="table table-striped">
+	<thead>
+		<th>Cereal ID</th>
+		<th>Name</th>
+		<th>Manufacturer</th>
+		<th>Energy (kJ)</th>
+		<th>Calories (kcal)</th>
+		<th>Protein (g)</th>
+		<th>Carbohydrates (g)</th>
+		<th>Sugars (g)</th>
+		<th>Fat (g)</th>
+		<th>Saturates (g)</th>
+		<th>Fibre (g)</th>
+		<th>Sodium (g)</th>
+		<th>Salt (g)</th>
+		<th>Iron (mg)</th>
+		<th>CRUD</th>
+	</thead>
+	<tbody>
+		<tr th:each="cereal: ${cereals}">
+			<td th:text="${cereal.cerealId}"></td>
+			<td th:text="${cereal.cereal}"></td>
+			<td th:text="${cereal.manufacturer}"></td>
+			<td th:text="${cereal.energy}"></td>
+			<td th:text="${cereal.calories}"></td>
+			<td th:text="${cereal.protein}"></td>
+			<td th:text="${cereal.carbohydrate}"></td>
+			<td th:text="${cereal.sugars}"></td>
+			<td th:text="${cereal.fat}"></td>
+			<td th:text="${cereal.saturates}"></td>
+			<td th:text="${cereal.fibre}"></td>
+			<td th:text="${cereal.sodium}"></td>
+			<td th:text="${cereal.salt}"></td>
+			<td th:text="${cereal.iron}"></td>
+			<td><a href="#" th:href="@{/view/} + ${cereal.cerealId}">View</a><p></p>
+			<a href="#" th:href="@{/delete/} + ${cereal.cerealId}">Delete</a><p></p>
+			<a href="#" th:href="@{/edit/} + ${cereal.cerealId}">Edit</a></td>
+		
+		</tr>
+	</tbody>
+	</table>
+	<p><a href="#" th:href="@{/add/}">Add new Cereal</a><br/></p>
+
+
+</div>
+</body>
+</html>
