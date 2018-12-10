@@ -60,8 +60,8 @@
 		</tr>
 		<tr>
 			<td>Manufacturer</td>
-			<td><input type="text" class="form-control" th:field="${manufacturer}"></input>
-			<span th:if="${#fields.hasErrors('manufacturer')}" th:errors="${manufacturer}"
+			<td><input type="text" class="form-control" th:field="${cereal.manufacturer}"></input>
+			<span th:if="${#fields.hasErrors('cereal.manufacturer')}" th:errors="${cereal.manufacturer}"
 				th:class="help-block">Survived cannot be empty</span>
 			</td>
 		</tr>
@@ -89,7 +89,7 @@
 		<tr>
 			<td>Carbohydrate (g)</td>
 			<td><input type="text" class="form-control" th:field="${cereal.carbohydrate}"></input>
-			<span th:if="${#fields.hasErrors('passenger.survived')}" th:errors="${passenger.survived}"
+			<span th:if="${#fields.hasErrors('cereal.carbohydrate')}" th:errors="${cereal.carbohydrate}"
 				th:class="help-block">Survived cannot be empty</span>
 			</td> 
 		</tr>

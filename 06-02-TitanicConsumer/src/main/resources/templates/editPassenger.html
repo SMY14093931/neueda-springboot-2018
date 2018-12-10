@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Spectral+SC|Strait" rel="stylesheet">
+<script src="https://js-agent.newrelic.com/nr-1099.min.js"></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+  
+  <title th:text="${pageTitle}">Passengers Page</title> 
+</head>
+<body>
+<nav th:replace="layouts/nav :: navFragment">
+</nav>
+
+
+<div class="jumbotron" style="background-image:../static/css/background.jpg; background-size: 100%;">
+   <div class="container for-about">
+   <h1 class="display-4" th:text="Titanic + ' ' + ${pageTitle}"></h1>
+   <p class="lead">This website is dedicated to the information of the passengers of the Titanic.</p>
+   </div>
+</div>
+
+<div class="container">
+
+<form action="/searchid" method="get">
+	<label>ID</label>
+	<input  type="text" name="id" placeholder="Enter id"></input>
+	<input type="submit" class="btn btn-primary mb-2" value="Search"></input>
+</form>
+<p></p>
+
+<form action="/searchname" method="post">
+	<label>Name</label>
+	<input  type="text" name="name" placeholder="Enter name"></input>
+	<input type="submit" class="btn btn-primary mb-2" value="Search"></input>
+</form>
+<p></p>
+
+<form action="/searchsex" method="get">
+	<label>Sex</label>
+	<input  type="text" name="sex" placeholder="Enter gender"></input>
+	<input type="submit" class="btn btn-primary mb-2" value="Search"></input>
+</form>
+<p></p>
+
+<form action="/searchnamesex" method="get">
+	<label>Name</label>
+	<input type="text" name="name" placeholder="Enter name"></input>
+	<label>Gender</label>
+	<input type="text" name="sex" placeholder="Enter gender"></input>
+	<input type="submit" class="btn btn-primary mb-2" value="Search"></input>
+</form>
+
+<form action="/save" method="post">
+	<table class="table table-striped">
+	<thead>
+		<th>Property</th>
+		<th>Value</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Passenger Id</td>
+			<td><input type="text" readonly="readonly" th:field="${passenger.passengerId}"></input></td> 
+		</tr>
+		<tr>
+			<td>Survived</td>
+			<td><input type="text" class="form-control" th:field="${passenger.survived}"></input>
+			<span th:if="${#fields.hasErrors('passenger.survived')}" th:errors="${passenger.survived}"
+				th:class="help-block">Survived cannot be empty</span>
+			</td> 
+		</tr>
+		<tr>
+			<td>Pclass</td>
+			<td><input type="text" class="form-control" th:field="${passenger.pclass}"></input>
+				<span th:if="${#fields.hasErrors('passenger.pclass')}" th:errors="${passenger.pclass}"
+				th:class="help-block">Pclass cannot be empty</span>
+			</td> 
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td><input type="text" class="form-control" th:field="${passenger.name}"></input>
+				<span th:if="${#fields.hasErrors('passenger.name')}" th:errors="${passenger.name}"
+				th:class="help-block">Name cannot be empty</span>
+			</td> 
+		</tr>
+		<tr>
+			<td>Sex</td>
+			<td><input type="text" class="form-control" th:field="${passenger.sex}"></input>
+				<span th:if="${#fields.hasErrors('passenger.sex')}" th:errors="${passenger.sex}"
+				th:class="help-block">Gender cannot be empty</span>
+			</td> 
+		</tr>
+		<tr>
+			<td>Age</td>
+			<td><input type="text" class="form-control" th:field="${passenger.age}"></input>
+				<span th:if="${#fields.hasErrors('passenger.age')}" th:errors="${passenger.age}"
+				th:class="help-block">Age cannot be empty</span>
+			</td> 
+		</tr>
+		<tr>
+			<td>Sib Sp</td>
+			<td><input type="text" class="form-control" th:field="${passenger.sibSp}"></input>
+			<span th:if="${#fields.hasErrors('passenger.sibSp')}" th:errors="${passenger.sibSp}"
+				th:class="help-block">Sib Sp cannot be empty</span>
+			</td> 
+		</tr>
+		<tr>
+			<td>Parch</td>
+			<td><input type="text" class="form-control" th:field="${passenger.parch}"></input>
+			<span th:if="${#fields.hasErrors('passenger.parch')}" th:errors="${passenger.parch}"
+				th:class="help-block">Parch cannot be empty</span>
+			</td> 
+		</tr>
+		<tr>
+			<td>Ticket</td>
+			<td><input type="text" class="form-control" th:field="${passenger.ticket}"></input>
+			<span th:if="${#fields.hasErrors('passenger.ticket')}" th:errors="${passenger.ticket}"
+				th:class="help-block">Ticket cannot be empty</span>
+			</td> 
+		</tr>
+		<tr>
+			<td>Fare</td>
+			<td><input type="text" class="form-control" th:field="${passenger.fare}"></input>
+			<span th:if="${#fields.hasErrors('passenger.fare')}" th:errors="${passenger.fare}"
+				th:class="help-block">Fare cannot be empty</span>
+			</td> 
+		</tr>
+		<tr>
+			<td>Cabin</td>
+			<td><input type="text" class="form-control" th:field="${passenger.cabin}"></input>
+			<span th:if="${#fields.hasErrors('passenger.cabin')}" th:errors="${passenger.cabin}"
+				th:class="help-block">Cabin cannot be empty</span>
+			</td> 
+		</tr>
+		<tr>
+			<td>Embarked</td>
+			<td><input type="text" class="form-control" th:field="${passenger.embarked}"></input>
+			<span th:if="${#fields.hasErrors('passenger.cabin')}" th:errors="${passenger.cabin}"
+				th:class="help-block">Cabin cannot be empty</span>
+			</td> 
+		</tr>
+	</tbody>
+	</table>
+	<button type="submit" class="btn btn-primary">Save</button>
+	</form>
+</div>
+
+</body>
+</html>
