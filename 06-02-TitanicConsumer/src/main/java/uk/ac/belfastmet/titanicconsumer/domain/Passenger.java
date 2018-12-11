@@ -1,17 +1,10 @@
 package uk.ac.belfastmet.titanicconsumer.domain;
 
-import javax.persistence.Entity;import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotEmpty;
 
-@Entity
+
 public class Passenger {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer passengerId;
-	@NotEmpty
 	private String survived;
 	private String pclass;
 	private String name;
@@ -28,10 +21,9 @@ public class Passenger {
 		super();
 	}
 
-	public Passenger(Integer passengerId, String survived, String pclass, String name, String sex, String age,
+	public Passenger(String survived, String pclass, String name, String sex, String age,
 			String sibSp, String parch, String ticket, Double fare, String cabin, String embarked) {
 		super();
-		this.passengerId = passengerId;
 		this.survived = survived;
 		this.pclass = pclass;
 		this.name = name;
