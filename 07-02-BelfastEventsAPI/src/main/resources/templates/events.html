@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Spectral+SC|Strait" rel="stylesheet">
+<script src="https://js-agent.newrelic.com/nr-1099.min.js"></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+  
+  <title th:text="${pageTitle}">Events</title> 
+</head>
+<body>
+<nav th:replace="layouts/nav :: navFragment">
+</nav>
+
+<div class="jumbotron" style="background-image: url(http://www.californiafootgolfclub.com/static/img/footgolf-1.jpg); background-size: 100%;">
+   <div class="container for-about">
+	<h1 class="display-4" th:text="${pageTitle}">Events</h1>
+   <p class="lead">This website is dedicated to the information on the Belfast events.</p>
+   </div>
+</div>
+
+<div class="container">
+<p th:text="${pageTitle}">Events</p>
+
+<div class="alert alert-success" role="alert" th:if="${message}">
+		<p th:text="${message}"></p>
+</div>
+
+<p><a href="#" th:href="@{/add/}"></a><br/></p>
+
+	<table class="table table-striped">
+	<thead>
+		<th>Title</th>
+		<th>Contents</th>
+		<th>Theme</th>
+		<th>Date</th>
+		<th>Venue</th>
+		<th>Identifier</th>
+	</thead>
+	<tbody>
+		<tr>
+		<tr th:each="event: ${events}">
+
+			<b><td th:text="${event.title}">Title</td></b>
+			<td th:utext="${event.content}">Weather</td>
+			<td th:text="${event.theme}">Contents</td>
+			<td th:text="${#dates.format(event.startDate, 'dd/MM/yyyy')}">Date</td>
+			<td th:text="${event.venue}">Venue</td>
+			<td th:text="${event.identifier}">Identifier</td>
+		</tr>
+	</tbody>
+	</table>
+</div>
+
+</body>
+</html>
