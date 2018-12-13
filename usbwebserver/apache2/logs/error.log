@@ -1,5 +1,5 @@
-[Wed Dec 12 09:03:52.381115 2018] [mpm_winnt:notice] [pid 9364:tid 772] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
-[Wed Dec 12 09:03:52.470464 2018] [mpm_winnt:notice] [pid 9364:tid 772] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
-[Wed Dec 12 09:03:52.470464 2018] [core:notice] [pid 9364:tid 772] AH00094: Command line: 'C:\\Users\\SMY14093931\\Documents\\neueda-springboot-AaronSmyth\\usbwebserver/apache2/bin/httpd_usbwv8.exe -d C:/Users/SMY14093931/Documents/neueda-springboot-AaronSmyth/usbwebserver/apache2'
-[Wed Dec 12 09:03:52.474478 2018] [mpm_winnt:notice] [pid 9364:tid 772] AH00418: Parent: Created child process 4088
-[Wed Dec 12 09:03:54.027655 2018] [mpm_winnt:notice] [pid 4088:tid 804] AH00354: Child: Starting 64 worker threads.
+[Thu Dec 13 08:56:01.972866 2018] [mpm_winnt:notice] [pid 9432:tid 808] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
+[Thu Dec 13 08:56:02.028064 2018] [mpm_winnt:notice] [pid 9432:tid 808] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
+[Thu Dec 13 08:56:02.028622 2018] [core:notice] [pid 9432:tid 808] AH00094: Command line: 'C:\\Users\\SMY14093931\\Documents\\neueda-springboot-AaronSmyth\\usbwebserver/apache2/bin/httpd_usbwv8.exe -d C:/Users/SMY14093931/Documents/neueda-springboot-AaronSmyth/usbwebserver/apache2'
+[Thu Dec 13 08:56:02.031634 2018] [mpm_winnt:notice] [pid 9432:tid 808] AH00418: Parent: Created child process 8872
+[Thu Dec 13 08:56:03.959312 2018] [mpm_winnt:notice] [pid 8872:tid 796] AH00354: Child: Starting 64 worker threads.

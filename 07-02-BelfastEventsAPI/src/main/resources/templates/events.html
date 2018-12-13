@@ -45,7 +45,7 @@
 		<tr>
 		<tr th:each="event: ${events}">
 
-			<b><td th:text="${event.title}">Title</td></b>
+			<td th:text="${event.title}">Title</td>
 			<td th:utext="${event.content}">Weather</td>
 			<td th:text="${event.theme}">Contents</td>
 			<td th:text="${#dates.format(event.startDate, 'dd/MM/yyyy')}">Date</td>
